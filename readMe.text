@@ -1,0 +1,18 @@
+Required Dependencies:
+->Scrapy
+->IMDbPY
+This project involves three scripts that work together to scrape 
+movie data from the Everyman Cinema in King's Cross and process it.
+
+1.EveryManSpider.py: This script scrapes film titles and screening times
+ from the Everyman Cinema and saves the data in a JSON file.
+
+2.processMovieData.py: This script takes the JSON file (a list of dictionaries)
+ and processes it into a new nested dictionary. Each movie title serves as a 
+ key, with its metadata (collected via the IMDb API) stored as nested dictionaries 
+ (e.g., '{'movie title': {'rating': 7, 'directors': 'J.J. Abrams', ...}}'). This 
+ script provides detailed metadata for each movie.
+
+3.findMovie.py: To test the data processing without running the scraper, you can
+ use the 'movies.json' file with 'processMovieData.py.' The final data structure is
+  saved in 'moviesDict.json,' which you can also use to test the 'findMovie.py' script.
